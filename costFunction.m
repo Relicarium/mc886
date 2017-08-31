@@ -26,6 +26,6 @@ function [cost] = costFunction (X, y, theta)
 
 sizeData = size(y,2);
 pred = X * theta';
-cost = (1/(2*sizeData)) * sum((pred - y).**2)
+cost = (1/(2*sizeData)) * sum((pred - y).**2);
 
 endfunction
