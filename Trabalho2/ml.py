@@ -15,10 +15,26 @@ nTestes = 1000		# Numero de imagens de teste
 
 
 # Definindo o conjunto de testes
-if (sys.argv[1] == 'small'):
-	addr = './dataset.small'
-else :
+if (len(sys.argv) > 1):
+	if (sys.argv[1] == 'small'):
+		addr = './dataset.small'
+		print("Rodando com o Small Dataset - número de imagens = 1000")
+		numImages = 1000
+
+	else:
+		addr = './dataset.noUp'
+		print("Rodando com o Dataset completo")
+		if (int(sys.argv[1]) > 0):
+			numImages = int(sys.argv[1])
+			print("Usando " + str(numImages) + " imagens")
+		else:
+			print("Usando número default de imagens = 10000")
+			numImages = 10000
+
+else:
+	print("Rodando no mode default - Dataset Completo com 1000 imagens")
 	addr = './dataset.noUp'
+	numImages = 1000
 
 print("Criando X de treino...")
 X = numpy.ones((numImages, 3073))
