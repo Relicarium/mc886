@@ -10,7 +10,6 @@ from sklearn.neural_network import MLPClassifier
 classe = 0			# O que eu to tentando reconhecer
 numImages = 1000	# Número de imagens para treinar a rede
 nInputs = 3073		# dimensao da imagem
-
 nTestes = 1000		# Numero de imagens de teste
 
 
@@ -20,6 +19,13 @@ if (len(sys.argv) > 1):
 		addr = './dataset.small'
 		print("Rodando com o Small Dataset - número de imagens = 1000")
 		numImages = 1000
+		nTestes = 1000
+
+	elif (sys.argv[1] == 'full'):
+		addr = './dataset.small'
+		print("WOOHOOOO RODANDO COM TODOS OS DADOOOS")
+		numImages = 50000
+		nTestes = 10000
 
 	else:
 		addr = './dataset.noUp'
@@ -27,14 +33,26 @@ if (len(sys.argv) > 1):
 		if (int(sys.argv[1]) > 0):
 			numImages = int(sys.argv[1])
 			print("Usando " + str(numImages) + " imagens")
+			if (len(sys.argv) > 2):
+				nTestes = int(sys.argv[2])
+			else:
+				nTestes = 5000
 		else:
 			print("Usando número default de imagens = 10000")
 			numImages = 10000
+			nTestes = 1000
 
 else:
 	print("Rodando no mode default - Dataset Completo com 1000 imagens")
 	addr = './dataset.noUp'
 	numImages = 1000
+	nTestes = 1000
+
+print("\n---------------------------\n")
+print("Numero de Imagens de Treino: " + str(numImages))
+print("Numero de Imagens de Teste: "  + str(nTestes))
+print("Dataset: " + addr)
+print("\n---------------------------\n")
 
 print("Criando X de treino...")
 X = numpy.ones((numImages, 3073))
