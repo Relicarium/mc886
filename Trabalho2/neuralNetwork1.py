@@ -58,6 +58,8 @@ print("Criando X de treino...")
 X = numpy.ones((numImages, 3073))
 for num in range(0, numImages):
     im = Image.open(addr + '/train/' + '{:05d}'.format(num) + '.png')
+    #Applying filters
+    im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X[num, 1:3073] = (im-127)/255
 
@@ -78,6 +80,8 @@ print("Criando X de teste...")
 X_test = numpy.ones((nTestes, 3073))
 for num in range(0, nTestes):
     im = Image.open(addr + '/test/' + '{:05d}'.format(num) + '.png')
+    #Applying filters
+    im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X_test[num, 1:3073] = im
 X_test = (X_test-127)/255
