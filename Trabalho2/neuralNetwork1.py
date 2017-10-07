@@ -3,7 +3,7 @@
 
 import numpy
 import sys
-from PIL import Image
+from PIL import Image, ImageFilter
 from numpy import genfromtxt
 from sklearn.neural_network import MLPClassifier
 
@@ -22,7 +22,7 @@ if (len(sys.argv) > 1):
 		nTestes = 1000
 
 	elif (sys.argv[1] == 'full'):
-		addr = './dataset.small'
+		addr = './dataset.noUp'
 		print("WOOHOOOO RODANDO COM TODOS OS DADOOOS")
 		numImages = 50000
 		nTestes = 10000
@@ -48,11 +48,11 @@ else:
 	numImages = 1000
 	nTestes = 1000
 
-print("\n---------------------------\n")
+print("\n---------------------------")
 print("Numero de Imagens de Treino: " + str(numImages))
 print("Numero de Imagens de Teste: "  + str(nTestes))
 print("Dataset: " + addr)
-print("\n---------------------------\n")
+print("---------------------------\n")
 
 print("Criando X de treino...")
 X = numpy.ones((numImages, 3073))
@@ -72,9 +72,7 @@ for num in range(0,numImages):
 
 print("Modelando a rede...")
 mlp = MLPClassifier(hidden_layer_sizes=(1500),solver='sgd',learning_rate_init=0.01,max_iter=300,verbose=True)
-print("Treinando...")
-mlp.fit(X, y)
-print("Treinado!")
+mlp.fit(X, y)	#Treinando a Rede
 
 print("Criando X de teste...")
 X_test = numpy.ones((nTestes, 3073))
@@ -92,5 +90,4 @@ for num in range(0,nTestes):
     if labelsTest[num] == classe:
         y_test[num] = 1
 
-print("Testando")
 print (mlp.score(X_test, y_test))
