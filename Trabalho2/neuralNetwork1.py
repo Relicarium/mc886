@@ -66,11 +66,10 @@ for num in range(0, numImages):
 
 print("Criando Y de treino...")
 labelsT = genfromtxt(addr + '/train/labels', delimiter=',')
-y = numpy.zeros((numImages, 10))
+y = numpy.zeros((numImages))
 
 for num in range(0,numImages):
-	a = int(labelsT[num])
-	y[num][a] = 1
+	y[num] = int(labelsT[num])
 
 print("Modelando a rede...")
 mlp = MLPClassifier(hidden_layer_sizes=(1500),activation='relu',solver='sgd',learning_rate_init=0.01,max_iter=300,verbose=True)
@@ -88,10 +87,9 @@ X_test = (X_test-127)/255
 
 print("Criando Y de teste...")
 labelsTest = genfromtxt(addr + '/test/labels', delimiter=',')
-y_test = numpy.zeros((nTestes, 10))
+y_test = numpy.zeros((nTestes))
 
 for num in range(0,nTestes):
-	a = int(labelsTest[num])
-	y_test[num][a] = 1
+	y_test[num] = int(labelsTest[num])
 
 print (mlp.score(X_test, y_test))
