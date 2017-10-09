@@ -59,21 +59,21 @@ X = numpy.ones((numImages, 3073))
 for num in range(0, numImages):
     im = Image.open(addr + '/train/' + '{:05d}'.format(num) + '.png')
     #Applying filters
-    #im = im.filter(ImageFilter.DETAIL)
+    im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X[num, 1:3073] = (im-127)/255
 
 
 print("Criando Y de treino...")
 labelsT = genfromtxt(addr + '/train/labels', delimiter=',')
-y = numpy.zeros((numImages, 1))
+y = numpy.zeros((numImages, 10))
 
 for num in range(0,numImages):
-    if labelsT[num] == classe:
-        y[num] = 1
+	a = int(labelsT[num])
+	y[num][a] = 1
 
 print("Modelando a rede...")
-mlp = MLPClassifier(hidden_layer_sizes=(1500),solver='sgd',learning_rate_init=0.01,max_iter=300,verbose=True)
+mlp = MLPClassifier(hidden_layer_sizes=(1500),activation='relu',solver='sgd',learning_rate_init=0.01,max_iter=300,verbose=True)
 mlp.fit(X, y)	#Treinando a Rede
 
 print("Criando X de teste...")
@@ -81,17 +81,17 @@ X_test = numpy.ones((nTestes, 3073))
 for num in range(0, nTestes):
     im = Image.open(addr + '/test/' + '{:05d}'.format(num) + '.png')
     #Applying filters
-    #im = im.filter(ImageFilter.DETAIL)
+    im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X_test[num, 1:3073] = im
 X_test = (X_test-127)/255
 
 print("Criando Y de teste...")
 labelsTest = genfromtxt(addr + '/test/labels', delimiter=',')
-y_test = numpy.zeros((nTestes))
+y_test = numpy.zeros((nTestes, 10))
 
 for num in range(0,nTestes):
-    if labelsTest[num] == classe:
-        y_test[num] = 1
+	a = int(labelsTest[num])
+	y_test[num][a] = 1
 
 print (mlp.score(X_test, y_test))
