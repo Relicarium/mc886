@@ -1,5 +1,6 @@
 # Giovani Nascimento Pereira - 168609
 # Carlos Augusto Figueiredo Feire de Carvalho - 
+# Versão usando as imagens como base de dados
 
 import numpy
 import sys
@@ -59,7 +60,7 @@ X = numpy.ones((numImages, 3073))
 for num in range(0, numImages):
     im = Image.open(addr + '/train/' + '{:05d}'.format(num) + '.png')
     #Applying filters
-    im = im.filter(ImageFilter.DETAIL)
+    #im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X[num, 1:3073] = (im-127)/255
 
@@ -69,10 +70,18 @@ labelsT = genfromtxt(addr + '/train/labels', delimiter=',')
 y = numpy.zeros((numImages))
 
 for num in range(0,numImages):
-	y[num] = int(labelsT[num])
+	y[num] = labelsT[num]
 
 print("Modelando a rede...")
-mlp = MLPClassifier(hidden_layer_sizes=(1500),activation='relu',solver='sgd',learning_rate_init=0.01,max_iter=300,verbose=True)
+mlp = MLPClassifier(
+	hidden_layer_sizes=(10, 10),
+	solver='sgd',
+	learning_rate='adaptive',
+	learning_rate_init=0.01,
+	max_iter=10000,
+	alpha=0.01,
+	verbose=True)
+
 mlp.fit(X, y)	#Treinando a Rede
 
 print("Criando X de teste...")
@@ -80,7 +89,7 @@ X_test = numpy.ones((nTestes, 3073))
 for num in range(0, nTestes):
     im = Image.open(addr + '/test/' + '{:05d}'.format(num) + '.png')
     #Applying filters
-    im = im.filter(ImageFilter.DETAIL)
+    #im = im.filter(ImageFilter.DETAIL)
     im = numpy.array(im).flatten()
     X_test[num, 1:3073] = im
 X_test = (X_test-127)/255
@@ -90,6 +99,8 @@ labelsTest = genfromtxt(addr + '/test/labels', delimiter=',')
 y_test = numpy.zeros((nTestes))
 
 for num in range(0,nTestes):
-	y_test[num] = int(labelsTest[num])
+	y_test[num] = labelsTest[num]
 
-print (mlp.score(X_test, y_test))
+print ('Treino: ', mlp.score(X, y), '\tTeste :', mlp.score(X_test, y_test))
+
+# print (mlp.score(X_test, y_test))
