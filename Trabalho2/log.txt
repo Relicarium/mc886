@@ -1,0 +1,50 @@
+c= 1
+
+full
+0.1168
+0.29416
+
+small - 100 (n muda se aumentar)
+0.1169
+0.997
+
+c = 10e-5
+
+0.1072
+0.628
+
+0.1291
+0.2107
+full
+
+-- melhorou overfitting mas score n melhorou mt, logo, precisamos olhar os dados de forma diferente
+
+multinomial 
+
+0.1342
+0.24036
+
+filtros
+1
+0.1214
+0.2277
+
+2
+0.1324
+0.23972
+3
+0.1346
+0.25192
+4
+0.1261
+0.25298
+5
+0.2106
+0.2545
+6
+0.1391
+0.24594
+7
+0.1289
+0.24016
+
