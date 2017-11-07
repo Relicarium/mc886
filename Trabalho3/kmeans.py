@@ -14,10 +14,13 @@ nFeatures = 2209
 nTreino = int(0.9 * nTotal)
 nTeste  = int(nTotal - nTreino)
 
+#Atualizar com o caminho do csv no seu diretorio
+csvPath = "./dataset/csv.noUp/data.csv"
+
 
 # Pegando os dados
 print('-----------Pegando os dados----------')
-reader = csv.reader(open("./dataset/csv.noUp/data.csv", "r"), delimiter=",")
+reader = csv.reader(open(csvPath, "r"), delimiter=",")
 med = list(reader)
 data= numpy.array(med).astype("float")
 
