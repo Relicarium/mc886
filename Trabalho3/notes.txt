@@ -1,0 +1,3 @@
+- importante lembrar que o conjunto de teste deve se manter constante
+
+- primeiro teste, pequeno dataset -> maior ficou 76, mas numero ficou baixo, talvez dados sejam pouco confiáveis se a gente mantiver assim
