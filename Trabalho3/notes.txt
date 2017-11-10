@@ -1,3 +1,554 @@
 - importante lembrar que o conjunto de teste deve se manter constante
 
 - primeiro teste, pequeno dataset -> maior ficou 76, mas numero ficou baixo, talvez dados sejam pouco confiáveis se a gente mantiver assim
+
+-----------Pegando os dados----------
+-----------Montando Treino----------
+shape dos dados:  (19924, 1)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.01
+0.8981565882
+
+shape dos dados:  (19924, 2)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.02
+0.730152980046
+
+Aplicando PCA no nosso melhor modelo com clusters: 3 e variancia:  0.02
+0.503539970757
+
+shape dos dados:  (19924, 2)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.03
+0.730152980046
+
+Aplicando PCA no nosso melhor modelo com clusters: 3 e variancia:  0.03
+0.503539970757
+
+shape dos dados:  (19924, 3)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.04
+0.646092234954
+
+Aplicando PCA no nosso melhor modelo com clusters: 3 e variancia:  0.04
+0.341381103194
+
+
+----------------------
+
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.1
+0.402008206531
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.1
+0.210763398994
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.1
+0.206139811193
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.1
+0.19539236544
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.1
+0.191588504675
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.1
+0.184883822747
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.1
+0.178719970693
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.1
+0.181385196512
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.1
+0.169556536443
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.1
+0.177147144356
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.1
+0.174069150903
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.1
+0.175215686719
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.1
+0.170552994857
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.1
+0.166996598321
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.1
+0.173498908992
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.1
+0.170569116349
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.1
+0.162682152499
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.1
+0.169846685309
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.1
+0.172601245356
+
+shape dos dados:  (1000, 25)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.2
+0.210106681486
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.2
+0.134940480058
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.2
+0.196499070069
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.2
+0.191496627748
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.2
+0.179315878358
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.2
+0.166092270997
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.2
+0.171074738843
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.2
+0.162459412158
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.2
+0.162478507591
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.2
+0.146720620613
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.2
+0.148489447162
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.2
+0.147973890627
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.2
+0.145774226198
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.2
+0.139545955383
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.2
+0.142927125631
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.2
+0.144948394403
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.2
+0.147599342491
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.2
+0.14547612296
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.2
+0.135949651862
+
+shape dos dados:  (1000, 48)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.3
+0.137042754437
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.3
+0.0979179469687
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.3
+0.145358900991
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.3
+0.188248905038
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.3
+0.197235204194
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.3
+0.201141033327
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.3
+0.180828361205
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.3
+0.17547538668
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.3
+0.181543262462
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.3
+0.172239542951
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.3
+0.16041882565
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.3
+0.158999298023
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.3
+0.158565653791
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.3
+0.155119689685
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.3
+0.14726012585
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.3
+0.144427881562
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.3
+0.143741975859
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.3
+0.142914336794
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.3
+0.141528379399
+
+shape dos dados:  (1000, 82)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.4
+0.0764049229665
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.4
+0.0782665985032
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.4
+0.103716356464
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.4
+0.140292414707
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.4
+0.157862058206
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.4
+0.155995773327
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.4
+0.168249979582
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.4
+0.183044043396
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.4
+0.18378592801
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.4
+0.178920417568
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.4
+0.171031024194
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.4
+0.169720364974
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.4
+0.163305999046
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.4
+0.163503839428
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.4
+0.158066730445
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.4
+0.155296525193
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.4
+0.153404704223
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.4
+0.142688818867
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.4
+0.144463796382
+
+shape dos dados:  (1000, 127)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.5
+0.0419186665675
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.5
+0.0690976843033
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.5
+0.0903028271424
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.5
+0.105547960973
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.5
+0.120971880309
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.5
+0.138168514055
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.5
+0.132526778042
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.5
+0.14816460581
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.5
+0.157295084198
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.5
+0.159154797199
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.5
+0.152100055171
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.5
+0.158103750065
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.5
+0.152497975055
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.5
+0.1626964621
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.5
+0.156441574554
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.5
+0.149597024264
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.5
+0.157664151025
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.5
+0.14187259094
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.5
+0.148792921405
+
+shape dos dados:  (1000, 187)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.6
+0.015018073502
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.6
+0.054540753651
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.6
+0.0723886723613
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.6
+0.094285980911
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.6
+0.0997185128574
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.6
+0.111430911945
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.6
+0.113490049048
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.6
+0.120076848622
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.6
+0.135997917353
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.6
+0.138277096672
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.6
+0.132591161266
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.6
+0.137714891317
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.6
+0.144759556847
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.6
+0.140340804925
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.6
+0.137485897924
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.6
+0.139687067201
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.6
+0.146274644809
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.6
+0.148575768348
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.6
+0.135158184117
+
+shape dos dados:  (1000, 266)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.7
+0.0120661293199
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.7
+0.0396760867263
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.7
+0.0628334370249
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.7
+0.0759762608956
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.7
+0.0909385901446
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.7
+0.0872487189605
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.7
+0.0927996844163
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.7
+0.104513842553
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.7
+0.106994867624
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.7
+0.108199745662
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.7
+0.116923407835
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.7
+0.114886762305
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.7
+0.11526206748
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.7
+0.120351716326
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.7
+0.11865744322
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.7
+0.122440100102
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.7
+0.114454877292
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.7
+0.126772694567
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.7
+0.124114726938
+
+shape dos dados:  (1000, 372)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.8
+0.0127723007776
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.8
+0.0365143033365
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.8
+0.0481333324407
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.8
+0.0642197728994
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.8
+0.06890358952
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.8
+0.0710925050611
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.8
+0.0790580435789
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.8
+0.0813427749417
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.8
+0.0874216599447
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.8
+0.0854587817009
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.8
+0.085952497676
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.8
+0.0919774486046
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.8
+0.0985824207965
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.8
+0.0988858812374
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.8
+0.0982673809158
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.8
+0.102876141471
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.8
+0.100587896098
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.8
+0.105677697252
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.8
+0.103246754606
+
+shape dos dados:  (1000, 534)
+Aplicando PCA no nosso melhor modelo com clusters: 2 e variancia:  0.9
+0.0120385690248
+
+Aplicando PCA no nosso melhor modelo com clusters: 12 e variancia:  0.9
+0.0286089092653
+
+Aplicando PCA no nosso melhor modelo com clusters: 22 e variancia:  0.9
+0.0425347821842
+
+Aplicando PCA no nosso melhor modelo com clusters: 32 e variancia:  0.9
+0.0530116979237
+
+Aplicando PCA no nosso melhor modelo com clusters: 42 e variancia:  0.9
+0.057172956246
+
+Aplicando PCA no nosso melhor modelo com clusters: 52 e variancia:  0.9
+0.0621489845691
+
+Aplicando PCA no nosso melhor modelo com clusters: 62 e variancia:  0.9
+0.0614297280913
+
+Aplicando PCA no nosso melhor modelo com clusters: 72 e variancia:  0.9
+0.0724057421498
+
+Aplicando PCA no nosso melhor modelo com clusters: 82 e variancia:  0.9
+0.0749928519717
+
+Aplicando PCA no nosso melhor modelo com clusters: 92 e variancia:  0.9
+0.074403746616
+
+Aplicando PCA no nosso melhor modelo com clusters: 102 e variancia:  0.9
+0.0792396718323
+
+Aplicando PCA no nosso melhor modelo com clusters: 112 e variancia:  0.9
+0.0735544304369
+
+Aplicando PCA no nosso melhor modelo com clusters: 122 e variancia:  0.9
+0.0765356854491
+
+Aplicando PCA no nosso melhor modelo com clusters: 132 e variancia:  0.9
+0.0790195546216
+
+Aplicando PCA no nosso melhor modelo com clusters: 142 e variancia:  0.9
+0.0786006768992
+
+Aplicando PCA no nosso melhor modelo com clusters: 152 e variancia:  0.9
+0.0848845356168
+
+Aplicando PCA no nosso melhor modelo com clusters: 162 e variancia:  0.9
+0.0821286074746
+
+Aplicando PCA no nosso melhor modelo com clusters: 172 e variancia:  0.9
+0.081415976478
+
+Aplicando PCA no nosso melhor modelo com clusters: 182 e variancia:  0.9
+0.0868902722911
