@@ -5,7 +5,7 @@ import numpy
 import sys
 from PIL import Image, ImageFilter
 from numpy import genfromtxt
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, MiniBatchKMeans, AgglomerativeClustering
 from sklearn.metrics import silhouette_score
 import csv
 
@@ -62,7 +62,7 @@ kmeans = KMeans(random_state = 1)
 maior = 0
 id_maior = 2
 
-for i in range (2, 51):
+for i in range (2, 3):
 	# altera o numero de clusters
 	kmeans = KMeans(n_clusters=i)
 	kmeans.fit(X_treino)
@@ -87,13 +87,37 @@ print('Melhor cluster: ', id_maior, '\t com silhouette_score de :', maior)
 # o init, que por padrão era kMeans++, p/ random
 #
 
-kmeans = KMeans(random_state = 1, init = 'random', n_clusters = id_maior)
-kmeans.fit(X_treino)
-label_teste = kmeans.predict(X_teste)
+kmeans2 = KMeans(random_state = 1, init = 'random', n_clusters = id_maior)
+kmeans2.fit(X_treino)
+label_teste = kmeans2.fit(X_treino)
 print('Mudando o método de inicialização do centroides para random: ')
 silhouette_score_new = silhouette_score(X_teste, label_teste)
 print(silhouette_score_new, '\n')
 
 # Fim do segundo teste
+#
+#
+
+# Fazer um teste com mini-batch k-means
+#
+#
+
+miniKmeans = MiniBatchKMeans(n_clusters = 100)
+miniKmeans.fit(X_treino)
+label_mini = miniKmeans.predict(X_teste)
+print('Mudando para MiniBatchKMeans temos: ', silhouette_score(X_teste, label_mini), '\n')
+
+# Fazer um teste com Aglomerative
+# http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html
+#
+#
+
+agglomerativeClustering = AgglomerativeClustering(n_clusters = 100)
+agglomerativeClustering.fit(X_treino)
+label_agglomerative = AgglomerativeClustering.predict(X_teste)
+print('Mudando para AgglomerativeClustering temos: ', silhouette_score(X_teste, label_agglomerative), '\n')
+
+#
+#
 #
 #
