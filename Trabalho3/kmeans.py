@@ -56,17 +56,16 @@ for num in range(0, nTreino):
 
 
 print(X_treino.shape)
-for i in range (1, 10):
-    pca = PCA(n_components= i/10, svd_solver='full')
+for i in range (1, 100):
+    pca = PCA(n_components= i/100, svd_solver='full')
     X_treino_pca = pca.fit_transform(X_treino)
-    print('shape dos dados: ', X_treino_pca.shape)
     kmeans_pca = KMeans(n_clusters=78)
     label_teste = kmeans_pca.fit_predict(X_treino_pca)
 
-    print('Aplicando PCA no nosso melhor modelo com clusters:', 78, 'e variancia: ', i/10)
+    #print('Aplicando PCA no nosso melhor modelo com clusters:', 78, 'e variancia: ', i/10)
     # calcula e imprime os silhouette_score desse modelo com esse numero de clusters
     silhouette_score_new = silhouette_score(X_treino, label_teste)
-    print(silhouette_score_new, '\n')
+    print(X_treino_pca.shape[1], silhouette_score_new)
 
 
 
