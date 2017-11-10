@@ -54,24 +54,6 @@ for num in range(0, nTreino):
 	X_treino[num, 1:(nFeatures+1)] = data[num, 0:nFeatures]
 
 
-
-print(X_treino.shape)
-for i in range (1, 100):
-    pca = PCA(n_components= i/100, svd_solver='full')
-    X_treino_pca = pca.fit_transform(X_treino)
-    kmeans_pca = KMeans(n_clusters=78)
-    label_teste = kmeans_pca.fit_predict(X_treino_pca)
-
-    #print('Aplicando PCA no nosso melhor modelo com clusters:', 78, 'e variancia: ', i/10)
-    # calcula e imprime os silhouette_score desse modelo com esse numero de clusters
-    silhouette_score_new = silhouette_score(X_treino, label_teste)
-    print(X_treino_pca.shape[1], silhouette_score_new)
-
-
-
-
-
-
 # Define modelo do KMeans - parâmetros:
 # KMeans(n_clusters=8,
 #		init=’k-means++’,
@@ -83,6 +65,34 @@ for i in range (1, 100):
 #		copy_x=True, n_jobs=1, algorithm=’auto’)
 
 kmeans = KMeans()
+
+kmeans = KMeans(n_clusters=78)
+label = kmeans.fit_predict(X_treino)
+X_new = kmeans.transform(X_treino)
+
+print('treinou')
+
+#	Procurando documentos proximos no mesmo cluster
+#
+
+# Acha o mais proximo de cada cluster
+
+for i in range (0, 78):
+	menor = 100
+	id_menor = 0
+	for j in range(1, 1000):
+		if((label[j] == i) and (X_new[j][label[j]] < menor)):
+			menor = X_new[j][label[j]]
+			id_menor = j
+	print('label: ', i, 'menor: ', id_menor, 'distancia: ', menor)
+
+# Acha outros membros dos cluster que estamos analisando
+for j in range(1, 1000):
+	if(label[j] == 8 or label[j] == 5):
+		print(j, label[j], X_new[j][label[j]])
+
+#
+#
 
 #  Primeira parte do treinamento, treinamos usando kMeans e incrementando o
 # numero de clusters a cada iteração
@@ -151,20 +161,16 @@ print('Mudando para K-Medoids temos: ', silhouette_score(distancia_treino, clust
 
 
 
-print(X_treino.shape)
-for i in range (1, 11):
-    pca = PCA(n_components= i/10, svd_solver='full')
+for i in range (1, 100):
+    pca = PCA(n_components= i/100, svd_solver='full')
     X_treino_pca = pca.fit_transform(X_treino)
-    print('shape dos dados: ', X_treino_pca.shape)
-    for j in range(1, 20):
-        kmeans_pca = KMeans(n_clusters=10 * (j - 1) + 2)
-        label_teste = kmeans_pca.fit_predict(X_treino_pca)
+    kmeans_pca = KMeans(n_clusters=78)
+    label_teste = kmeans_pca.fit_predict(X_treino_pca)
 
-        print('Aplicando PCA no nosso melhor modelo com clusters:', 10*(j - 1) + 2, 'e variancia: ', i/10)
-        # calcula e imprime os silhouette_score desse modelo com esse numero de clusters
-        silhouette_score_new = silhouette_score(X_treino_pca, label_teste)
-        print(silhouette_score_new, '\n')
-
+    #print('Aplicando PCA no nosso melhor modelo com clusters:', 78, 'e variancia: ', i/10)
+    # calcula e imprime os silhouette_score desse modelo com esse numero de clusters
+    silhouette_score_new = silhouette_score(X_treino, label_teste)
+    print(X_treino_pca.shape[1], silhouette_score_new)
 
 
 
